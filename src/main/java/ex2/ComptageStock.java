@@ -18,8 +18,7 @@ public class ComptageStock {
 	/** dateFinComptage : String  */
 	  private Date dateFinComptage;
 	  
-	/** type : String  */
-	  private String type;
+
 	
 	public void ajouterElement(int montant){
 		nb++;
@@ -31,7 +30,7 @@ public class ComptageStock {
 		if(nb == 0){
 			throw new RuntimeException("Le comptage contient aucun élément.");
 		}
-		affichageResultat();
+		affichageResultat(typeComptage);
 		affichageDateDebut();
 		affichageDateFin();
 		
@@ -41,20 +40,25 @@ public class ComptageStock {
 	/** Affiche le statut du comptage
 	 * @param typeComptage SOMME ou MOYENNE
 	 */
-	private void affichageResultat() {
+	private void affichageResultat(TypeComptage type) {
 		if (type!=null && type.equals(TypeComptage.SOMME)){
-			System.out.println("Ce comptage est de type SOMME");
-			System.out.println("Nombre d'élements "+nb);
 			
-			System.out.println("Résultat "+resultat);
+			affichertype(type, resultat);
+			
 		}
 		else if (type!=null && type.equals(TypeComptage.MOYENNE)){
-			System.out.println("Ce compte est de type MOYENNE");
-			System.out.println("Nombre d'élements "+nb);
 			
-			System.out.println("Résultat "+resultat/nb);
+			affichertype(type, resultat/nb);
 		}
 	}
+	
+	private void affichertype(TypeComptage type, double resultat){
+		System.out.println("Ce comptage est de type "+type);
+		System.out.println("Nombre d'élements "+nb);
+		System.out.println("Résultat "+resultat);
+	
+	}
+	
 	
 	private void affichageDateDebut(){
 		if(dateDebutComptage!=null){
