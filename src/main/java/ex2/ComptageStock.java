@@ -6,39 +6,40 @@ import java.util.Date;
 
 public class ComptageStock {
 
-	private int nb;
-	private int resultat;
-	private Date dateDebutComptage;
-	private String dateFinComptage;
-	private String type;
+	/** nb : int  */
+	  private int nb;
+	  
+	/** resultat : int  */
+	  private int resultat;
+	  
+	/** dateDebutComptage : Date  */
+	  private Date dateDebutComptage;
+	  
+	/** dateFinComptage : String  */
+	  private Date dateFinComptage;
+	  
+	/** type : String  */
+	  private String type;
 	
 	public void ajouterElement(int montant){
 		nb++;
 		resultat +=montant;
 	}
 	
-	public void afficheStatutComptage(){
+	/** Affiche le statut du comptage
+	 * @param typeComptage SOMME ou MOYENNE
+	 */
+	public void afficheStatutComptage(TypeComptage typeComptage){
 		
-		if (type!=null && type.equals("SOM")){
-			System.out.println("Ce comptage est de type SOMME");
-			System.out.println("Nombre d'élements "+nb);
-			
-			System.out.println("Résultat "+resultat);
-		}
-		else if (type!=null && type.equals("MOY")){
-			System.out.println("Ce compte est de type MOYENNE");
-			System.out.println("Nombre d'élements "+nb);
-			
-			System.out.println("Résultat "+resultat/nb);
-		}
+		affichageResultat();
 		
 		if (dateDebutComptage!=null){
-			SimpleDateFormat f = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-			System.out.println(f.format(dateDebutComptage));
+			
+			System.out.println(DateUtils.format(dateDebutComptage));
 		}
 		
 		if (dateFinComptage!=null){
-			System.out.println("Le comptage est clos depuis le "+dateFinComptage);
+			System.out.println("Le comptage est clos depuis le " + DateUtils.format(dateFinComptage));
 			if (nb==0){
 				System.out.println("Le comptage est clos mais n'a pas d'éléments. Le comptage est en anomalie.");
 			}
@@ -50,16 +51,24 @@ public class ComptageStock {
 			System.out.println("Le compte est actif.");
 		}
 	}
-	
-	public Date getDateFinComptage(){
-		SimpleDateFormat ff = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-		if (dateFinComptage!=null){
-			try {
-				return ff.parse(dateFinComptage);
-			} catch (ParseException e) {
-				return null;
-			}
+
+	/**
+	 * 
+	 */
+	private void affichageResultat() {
+		if (type!=null && type.equals(TypeComptage.SOMME)){
+			System.out.println("Ce comptage est de type SOMME");
+			System.out.println("Nombre d'élements "+nb);
+			
+			System.out.println("Résultat "+resultat);
 		}
-		return null;
+		else if (type!=null && type.equals(TypeComptage.MOYENNE)){
+			System.out.println("Ce compte est de type MOYENNE");
+			System.out.println("Nombre d'élements "+nb);
+			
+			System.out.println("Résultat "+resultat/nb);
+		}
 	}
+	
+	
 }
