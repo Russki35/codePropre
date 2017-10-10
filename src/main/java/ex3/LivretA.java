@@ -15,6 +15,16 @@ public class LivretA extends CompteBancaire {
 		
 	}
 	
+	@Override //Indique que l'on réécrit une méthode de la classe mère
+	public void debiterMontant(double montant){
+		
+		
+			if (this.solde - montant > 0){
+				this.solde = solde - montant;
+			}	
+		
+	}
+	
 	
 	
 
