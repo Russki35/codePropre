@@ -13,7 +13,7 @@ public class Animal {
 	 private String nom;
 	 private String comportement;
 
-	public Animal(String type, String nom, String comportement){
+	public Animal(String nom, String type, String comportement){
 		this.type = type;
 		this.nom = nom;
 		this.comportement = comportement;

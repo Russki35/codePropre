@@ -14,7 +14,9 @@ public class Zone  {
 	protected List<Animal> animaux;
 	
 
-	
+	public Zone(){
+		animaux = new ArrayList<>();
+	}
 	
 	
 	public void addAnimal(Animal animal) {
