@@ -1,6 +1,6 @@
 package ex4;
 
-public class Zoo {
+public class Zoo extends Zone {
 
 	private String nom;
 	private SavaneAfricaine savaneAfricaine;

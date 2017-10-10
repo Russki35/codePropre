@@ -6,7 +6,7 @@ public class ZooApplication {
 		Zoo zoo = new Zoo("Thoiry");
 		
 		zoo.addAnimal("Gazelle", "MAMMIFERE", "HERBIVORE");
-		zoo.addAnimal("Zèbre", "MAMIFERE", "HERBIVORE");
+		zoo.addAnimal("Zèbre", "MAMMIFERE", "HERBIVORE");
 		zoo.addAnimal("Lion", "MAMMIFERE", "HERBIVORE");
 		zoo.addAnimal("Panthère", "MAMMIFERE", "CARNIVORE");
 		zoo.addAnimal("Requin blanc", "POISSON", "HERBIVORE");
