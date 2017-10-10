@@ -4,7 +4,7 @@ package ex1;
  * @author ETY8
  *
  */
-public class calcul {
+public class Calcul {
 
 	
 	
