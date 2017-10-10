@@ -2,17 +2,17 @@ package ex3;
 
 public class LivretA extends CompteBancaire {
 
-	public LivretA(String type, double solde, double decouvert, double tauxRemuneration) {
-		super(type, solde, 0);
+	public LivretA(double solde, double tauxRemuneration) {
+		super(solde, 0);
 		this.tauxRemuneration = tauxRemuneration;
 		
 		
 	}
 	
 	public void appliquerRemuAnnuelle(){
-		if (type.equals("LA")){
+		
 			this.solde = solde + solde*tauxRemuneration/100;
-		}
+		
 	}
 	
 	
