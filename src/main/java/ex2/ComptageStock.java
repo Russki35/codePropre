@@ -26,34 +26,20 @@ public class ComptageStock {
 		resultat +=montant;
 	}
 	
-	/** Affiche le statut du comptage
-	 * @param typeComptage SOMME ou MOYENNE
-	 */
+	
 	public void afficheStatutComptage(TypeComptage typeComptage){
-		
+		if(nb == 0){
+			throw new RuntimeException("Le comptage contient aucun élément.");
+		}
 		affichageResultat();
+		affichageDateDebut();
+		affichageDateFin();
 		
-		if (dateDebutComptage!=null){
-			
-			System.out.println(DateUtils.format(dateDebutComptage));
-		}
-		
-		if (dateFinComptage!=null){
-			System.out.println("Le comptage est clos depuis le " + DateUtils.format(dateFinComptage));
-			if (nb==0){
-				System.out.println("Le comptage est clos mais n'a pas d'éléments. Le comptage est en anomalie.");
-			}
-			else {
-				System.out.println("Le comptage est clos et est OK.");
-			}
-		}
-		else {
-			System.out.println("Le compte est actif.");
-		}
 	}
 
-	/**
-	 * 
+
+	/** Affiche le statut du comptage
+	 * @param typeComptage SOMME ou MOYENNE
 	 */
 	private void affichageResultat() {
 		if (type!=null && type.equals(TypeComptage.SOMME)){
@@ -70,5 +56,16 @@ public class ComptageStock {
 		}
 	}
 	
+	private void affichageDateDebut(){
+		if(dateDebutComptage!=null){
+		System.out.println(dateDebutComptage);
+		}
+	}
+	
+	private void affichageDateFin(){
+		if(dateFinComptage!=null){
+		System.out.println(dateFinComptage);
+		}
+	}
 	
 }

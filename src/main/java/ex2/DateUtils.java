@@ -11,7 +11,9 @@ import java.util.Date;
  *
  */
 public class DateUtils {
-
+		
+		
+	
 		public static String format (Date dateFinComptage){
 			if(dateFinComptage==null){
 				return null;
