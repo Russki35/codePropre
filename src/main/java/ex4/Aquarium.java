@@ -6,6 +6,6 @@ public class Aquarium extends Zone {
 
 	
 	public double calculerKgsNourritureParJour(){
-		return noms.size() * 0.2;
+		return animaux.size() * 0.2;
 	}
 }

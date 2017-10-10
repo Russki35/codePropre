@@ -9,44 +9,41 @@ package ex4;
  */
 public class Animal {
 	
-	 private String AnimalTypes;
-	 private String AnimalNoms;
-	 private String AnimalComportements;
+	 private String type;
+	 private String nom;
+	 private String comportement;
 
-	public Animal(String AnimalTypes, String AnimalNoms, String AnimalComportements){
-		this.AnimalTypes = AnimalTypes;
-		this.AnimalNoms = AnimalNoms;
-		this.AnimalComportements = AnimalComportements;
+	public Animal(String type, String nom, String comportement){
+		this.type = type;
+		this.nom = nom;
+		this.comportement = comportement;
+	}
+	
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	public String getNom() {
+		return nom;
+	}
+
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+
+	public String getComportement() {
+		return comportement;
+	}
+
+	public void setComportement(String comportement) {
+		this.comportement = comportement;
 	}
 	
 	
 	
-	public enum comportement {
-		CARNIVORE, HERBIVORE;
-	}
-
-	public String getAnimalTypes() {
-		return AnimalTypes;
-	}
-
-	public void setAnimalTypes(String animalTypes) {
-		AnimalTypes = animalTypes;
-	}
-
-	public String getAnimalNoms() {
-		return AnimalNoms;
-	}
-
-	public void setAnimalNoms(String animalNoms) {
-		AnimalNoms = animalNoms;
-	}
-
-	public String getAnimalComportements() {
-		return AnimalComportements;
-	}
-
-	public void setAnimalComportements(String animalComportements) {
-		AnimalComportements = animalComportements;
-	}
-
 }

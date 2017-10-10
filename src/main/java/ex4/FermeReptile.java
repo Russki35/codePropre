@@ -6,6 +6,6 @@ public class FermeReptile extends Zone {
 
 		
 	public double calculerKgsNourritureParJour(){
-		return noms.size() * 0.1;
+		return animaux.size() * 0.1;
 	}
 }

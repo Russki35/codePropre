@@ -6,6 +6,6 @@ public class ZoneCarnivore extends Zone {
 
 
 	public double calculerKgsNourritureParJour(){
-		return noms.size() * 10;
+		return animaux.size() * 10;
 	}
 }

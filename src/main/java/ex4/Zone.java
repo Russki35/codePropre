@@ -11,26 +11,25 @@ import java.util.List;
  */
 public class Zone  {
 	
+	protected List<Animal> animaux;
+	
+
 	
 	
-	protected List<String> types;
-	protected List<String> noms;
-	protected List<String> comportements;
 	
-	public void addAnimal(String typeAnimal, String nomAnimal, String comportement) {
-		types.add(typeAnimal);
-		noms.add(nomAnimal);
-		comportements.add(comportement);
+	public void addAnimal(Animal animal) {
+		animaux.add(animal);
+		
 	}
 	
 	public void afficherListeAnimaux(){
-		for (String nom: noms){
-			System.out.println(nom);
+		for (Animal animal : animaux){
+			System.out.println(animal.getNom());
 		}
 	}
 	
 	public int compterAnimaux(){
-		return noms.size();
+		return animaux.size();
 	}
 
 }
